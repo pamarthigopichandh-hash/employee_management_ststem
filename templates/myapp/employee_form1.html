@@ -1,0 +1,38 @@
+{% extends 'myapp/base.html' %}
+{% load widget_tweaks %}
+
+{% block body_block %}
+<div class="container mt-5">
+
+    <div class="card mx-auto shadow" style="max-width: 400px;">
+        <div class="card-header bg-primary text-center text-white">
+            <h3>Create Employee</h3>
+        </div>
+
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    {{ form.EmployeeId|add_class:"form-control"|attr:"placeholder:Enter Employee ID" }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.EmployeeName|add_class:"form-control"|attr:"placeholder:Enter Employee Name" }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.EmployeeSalary|add_class:"form-control"|attr:"placeholder:Enter Employee Salary" }}
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success">Save</button>
+                    <a href="{% url 'employee_list' %}" class="btn btn-secondary">Back</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

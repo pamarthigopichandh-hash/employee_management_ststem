@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark btn-primary">
+        
+
+        <ul class="navbar-nav ms-auto btn-success">
+            <li class="nav-item">
+                <a href="{% url 'employee_add' %}" class="nav-link">ADD</a>
+
+            </li>
+            <li>
+                <a href="{% url 'employees_list' %}" class="nav-link">EMPLIST</a>
+
+            </li>
+                
+
+
+
+        </ul>
+        <div class="container mt-4  btn-success">
+    
+</div>
+
+    </nav>
+    {% block block_body %}
+    {% endblock %}
+</body>
+</html>

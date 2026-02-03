@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block block_body %}
+<div class="container mt-5 d-flex justify-content-center">
+
+    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+        <h3 class="text-center text-warning mb-4">Update Employee</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <div class="d-flex justify-content-between mt-4">
+                <button type="submit" class="btn btn-primary rounded-pill px-4">
+                    Save
+                </button>
+
+                <a href="{% url 'employees_list' %}"
+                   class="btn btn-success rounded-pill px-4">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
